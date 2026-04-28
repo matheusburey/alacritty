@@ -16,7 +16,6 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
-    poetry
 )
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
@@ -46,7 +45,7 @@ if [ -z "$ZELLIJ_ACTIVE" ] && [ "$TERM_PROGRAM" = "alacritty" ]; then
   fi
 fi
 
-if [[ -d $HOME/.local/bin/mise ]]; then
+if [[ -f $HOME/.local/bin/mise ]]; then
   eval "$($HOME/.local/bin/mise activate zsh)"
 fi
 
