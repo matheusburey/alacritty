@@ -32,19 +32,6 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
   mkdir $ZSH_CACHE_DIR
 fi
 
-if [ -z "$ZELLIJ_ACTIVE" ] && [ "$TERM_PROGRAM" = "alacritty" ]; then
-  ZJ_SESSIONS=$(zellij list-sessions --short)
-  NO_SESSIONS=$(echo "${ZJ_SESSIONS}" | wc -l)
-
-  if [ "${NO_SESSIONS}" -ge 2 ]; then
-      export ZELLIJ_ACTIVE=1
-      zellij attach "$(echo "${ZJ_SESSIONS}" | sk)"
-  else
-      zellij attach -c
-      export ZELLIJ_ACTIVE=1
-  fi
-fi
-
 if [[ -f $HOME/.local/bin/mise ]]; then
   eval "$($HOME/.local/bin/mise activate zsh)"
 fi
