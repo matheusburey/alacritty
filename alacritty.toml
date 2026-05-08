@@ -69,6 +69,9 @@ foreground = "#c5c8c6"
 ### CURSOR ###
 
 ### TERMINAL ###
+[terminal.shell]
+program = "/bin/bash"
+args = ["-c", "zellij attach job || zellij new-session -s job"]
 
 ### MOUSE ###
 
